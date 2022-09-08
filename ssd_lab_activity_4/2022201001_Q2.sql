@@ -1,0 +1,14 @@
+DELIMITER //
+
+CREATE PROCEDURE GetNameByCity(
+	IN cityName VARCHAR(255)
+)
+BEGIN
+	SELECT CUST_NAME 
+ 	FROM customer
+	WHERE WORKING_AREA = cityName;
+END //
+
+DELIMITER ;
+
+CALL GetNameByCity('Bangalore');
