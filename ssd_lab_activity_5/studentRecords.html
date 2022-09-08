@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Student Records</title>
+    <link rel="stylesheet" href="/style2.css">
+    <script>
+        let data = [];
+        function addRow(roll, student) {
+            var n = data.length;
+            var table = document.getElementById("student_table");
+            var row = table.insertRow(n);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = roll;
+            cell2.innerHTML = student;
+        }
+        function addNew() {
+            var roll = document.getElementById("roll_no").value;
+            var student = document.getElementById("student_name").value;
+            if (roll != "" && student != "") {
+                data.push({ roll, student });
+                addRow(roll, student);
+            }
+            else {
+                alert('Enter something');
+            }
+            document.getElementById("roll_no").value = "";
+            document.getElementById("student_name").value = "";
+        }
+        function deleteLast() {
+            var table = document.getElementById("student_table");
+            var n = table.rows.length;
+            if (n > 1) {
+                var row = table.rows;
+                row[n - 1].remove();
+            }
+            else {
+                alert('Table is empty');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Student Records</h1>
+
+    <div class="container">
+        <p>
+            <input type="text" id="roll_no">
+            <input type="text" id="student_name">
+            <button type="submit" id="add_new" onclick=addNew()>Add New</button>
+        </p>
+        <table id="student_table">
+            <thead>
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Student Name</th>
+                </tr>
+                </tbody>
+        </table>
+        <button id="delete" onclick=deleteLast()>Delete Last Record</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(90deg, rgba(32, 32, 110, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+.login_form {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 40px;
+    padding-left: 50px;
+    margin-top: 50px;
+    background: white;
+    box-shadow: 4px 4px 30px black;
+}
+
+.login_form #login_btn {
+    background-color: lightgreen;
+    color: black;
+    left: 30%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+input[type="text"]:hover {
+    background-color: lightblue;
+    opacity: 0.75;
+}
