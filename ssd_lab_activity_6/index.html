@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lab 6</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js"></script>
+</head>
+
+<body onkeyup="isKeyPressed(event)">
+    <div class="container">
+        <h2>Form</h2>
+        <form action="" onsubmit="event.preventDefault(); validateMyForm();">
+
+            <label for="manager_name">Manager Name</label>
+            <input id="manager_name" type="text" required /> <br><br>
+
+            <label for="group_email">Group Email</label>
+            <input type="email" id="group_email" required /> <br><br>
+
+            <label for="user_name">Server Username</label>
+            <input id="username" type="text" onkeyup="validate_username()" pattern="(?=.*\d)(?=.*[A-Z]).*"
+                title="Invalid Username" required />
+            <span id="error1"></span>
+            <br><br>
+
+            <label for="server_password">Server Password</label>
+            <input type="password" id="server_password" required /> <br><br>
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" onblur="validate_password()" required />
+            <span id="error2"></span>
+            <br><br>
+
+            <label for="team_lead">Team Lead</label>
+            <select id="team_lead" name="cars">
+                <option value="Rahul">Rahul</option>
+                <option value="Manish">Manish</option>
+                <option value="Aditya">Aditya</option>
+                <option value="Anjali">Anjali</option>
+            </select>
+            <br><br>
+
+            <input type="submit" id="submit_btn" onclick="check_submit()">
+
+        </form>
+    </div>
+
+</body>
+
+</html>
